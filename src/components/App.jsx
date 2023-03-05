@@ -6,7 +6,7 @@ import QuestionCard from "./QuestionCard";
 import Button from "./Button";
 
 function App() {
-	const [question, setQuestion] = useState("");
+	const [question, setQuestion] = useState({});
 	const [questionNumber, setQuestionNumber] = useState(0);
 	const [loading, setLoading] = useState(true);
 	const [showPrev, setShowPrev] = useState(false);
@@ -25,7 +25,7 @@ function App() {
 	// root url
 	const root =
 		"https://0h8nti4f08.execute-api.ap-northeast-1.amazonaws.com/getQuestionDetails/getquestiondetails";
-	// url === combination of root + questionID
+
 	const url = `${root}?QuestionID=${QuestionID[questionNumber]}`;
 
 	// when ever our url change question related component will re-render
@@ -37,10 +37,10 @@ function App() {
 			});
 			const data = await res.json();
 			setQuestion(data[0]);
-			setLoading(false);
-			console.log(data[0]);
+			// console.log(data[0]);
 		}
 		getQuestion();
+		setLoading(false);
 	}, [url]);
 
 	// console.log(question.Question);
@@ -51,7 +51,6 @@ function App() {
 			setShowPrev(false);
 			return;
 		}
-		setLoading(true);
 		setQuestionNumber(questionNumber - 1);
 		setShowPrev(true);
 		setShowNext(true);
@@ -63,9 +62,9 @@ function App() {
 			setShowNext(false);
 			return;
 		}
-		setQuestionNumber(questionNumber + 1);
 		setShowNext(true);
 		setShowPrev(true);
+		setQuestionNumber(questionNumber + 1);
 	}
 
 	return (
