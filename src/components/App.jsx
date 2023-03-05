@@ -31,15 +31,17 @@ function App() {
 	useEffect(() => {
 		// Fetch question data
 		async function getQuestion() {
-			const res = await fetch(url, {
-				mode: "cors",
-			});
-			const data = await res.json();
-			setQuestion(data[0]);
+			try {
+				const res = await fetch(url, { mode: "cors" });
+				const data = await res.json();
+				setQuestion(data[0]);
+				setLoading(false);
+			} catch (e) {
+				console.log(e.message);
+			}
 			// console.log(data[0]);
 		}
 		getQuestion();
-		setLoading(false);
 	}, [url]);
 
 	// console.log(question.Question);
@@ -64,7 +66,7 @@ function App() {
 		setQuestionNumber(questionNumber + 1);
 		setShowNext(true);
 		setShowPrev(true);
-		setLoading(true);
+		// setLoading(true);
 	}
 
 	return (

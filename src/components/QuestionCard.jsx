@@ -12,7 +12,9 @@ function QuestionCard({ question }) {
 				<span className={styles.topic__info}>{question.ChapterID}</span>
 			</div>
 			<div className={styles.content}>
-				<MathJax>{question.Question}</MathJax>
+				<MathJax hideUntilTypeset={"first"} inline dynamic>
+					{question.Question}
+				</MathJax>
 			</div>
 		</div>
 	);
