@@ -3,7 +3,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 60px;
+	padding: 15px 60px;
 	background-color: rgb(231, 229, 229);
 }
 
@@ -14,10 +14,17 @@
 	align-items: center;
 }
 
-.logo__part > i {
+.logo {
 	font-size: 25px;
 	cursor: pointer;
 	color: rgb(2, 30, 155);
+}
+
+.logo__part > .theme {
+	font-size: 20px;
+	padding-left: 20px;
+	cursor: pointer;
+	color:rgb(61, 60, 60)
 }
 
 .logo__part > span {

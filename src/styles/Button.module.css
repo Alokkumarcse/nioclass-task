@@ -1,0 +1,26 @@
+.btn {
+	cursor: pointer;
+	border: none;
+	margin: 0 10px;
+	padding: 7px 20px;
+	font-size: 18px;
+	border-radius: 10px;
+	background-color: rgb(127, 179, 240);
+	font-weight: bold;
+}
+
+.btn:hover{
+	background-color: rgb(217, 220, 223);
+	color:rgb(40, 71, 247)
+}
+
+.btn > i {
+	font-size: 25px;
+	color: rgb(66, 128, 209);
+}
+
+@media screen and (max-width: 525px) {
+	.btn {
+		margin: 0;
+	}
+}

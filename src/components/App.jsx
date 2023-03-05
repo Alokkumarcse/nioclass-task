@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 
-import styles from "./App.module.css";
+import styles from "../styles/App.module.css";
 import Navbar from "./Navbar";
 import QuestionCard from "./QuestionCard";
 import Button from "./Button";
 
 function App() {
 	const [question, setQuestion] = useState({});
-	const [questionNumber, setQuestionNumber] = useState(0);
+	const [questionNumber, setQuestionNumber] = useState(2);
 	const [loading, setLoading] = useState(true);
-	const [showPrev, setShowPrev] = useState(false);
+	const [showPrev, setShowPrev] = useState(true);
 	const [showNext, setShowNext] = useState(true);
+	const [theme, setTheme] = useState(false);
 
 	// array of question Id
 	const QuestionID = [
@@ -69,16 +70,21 @@ function App() {
 		// setLoading(true);
 	}
 
+	// FUNCTION: handle theme change
+	function changeTheme() {
+		setTheme(!theme);
+	}
+
 	return (
-		<div className={styles.app}>
-			<Navbar />
+		<div className={`${styles.app} ${theme && styles.dark}`}>
+			<Navbar theme={theme} changeTheme={changeTheme} />
 			{loading ? (
 				<span className={styles.spinner}>Loading...</span>
 			) : (
-				<QuestionCard question={question} />
+				<QuestionCard question={question} theme={theme} />
 			)}
 			<div className={styles.btn__container}>
-				{showPrev && <Button name="previous" handleChange={handlePrevious} />}
+				{showPrev && <Button name="prev" handleChange={handlePrevious} />}
 				{showNext && <Button name="next" handleChange={handleNext} />}
 			</div>
 		</div>

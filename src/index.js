@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./styles/index.css";
 import App from "./components/App";
 import { MathJaxContext } from "better-react-mathjax";
 
@@ -21,25 +21,6 @@ const config = {
 	},
 	messageStyle: "none",
 };
-
-// const config = {
-// 	jax: ["input/TeX", "output/HTML-CSS"],
-// 	extensions: ["tex2jax.js"],
-// 	TeX: {
-// 		extensions: ["AMSmath.js", "AMSsymbols.js"],
-// 		equationNumbers: { autoNumber: "AMS" },
-// 		displayMath: [
-// 			["$$", "$$"],
-// 			["\\[", "\\]"],
-// 		],
-// 		inlineMath: [
-// 			["$", "$"],
-// 			["\\(", "\\)"],
-// 		],
-// 		processEscapes: true,
-// 		automaticLinebreaks: true,
-// 	},
-// };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

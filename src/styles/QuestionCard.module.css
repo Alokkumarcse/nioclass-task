@@ -5,13 +5,23 @@
 	gap: 10px;
 }
 
-.info {
+.info__light {
 	background-color: rgb(236, 238, 144);
 	padding: 10px;
 	width: fit-content;
 	display: flex;
 	align-items: center;
 	border-radius: 5px;
+}
+
+.info__dark {
+	padding: 10px;
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	background-color: rgb(71, 74, 77);
+	color: rgb(236, 238, 144);
 }
 
 .topic {
@@ -65,7 +75,7 @@
 
 	.info {
 		padding: 5px;
-    flex-direction: column;
+		flex-direction: column;
 	}
 
 	.topic {
