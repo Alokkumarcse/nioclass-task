@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/nioclass-task/static/css/main.da2ea7ad.css",
-    "main.js": "/nioclass-task/static/js/main.c46e878d.js",
+    "main.js": "/nioclass-task/static/js/main.2910b8c4.js",
     "index.html": "/nioclass-task/index.html",
     "main.da2ea7ad.css.map": "/nioclass-task/static/css/main.da2ea7ad.css.map",
-    "main.c46e878d.js.map": "/nioclass-task/static/js/main.c46e878d.js.map"
+    "main.2910b8c4.js.map": "/nioclass-task/static/js/main.2910b8c4.js.map"
   },
   "entrypoints": [
     "static/css/main.da2ea7ad.css",
-    "static/js/main.c46e878d.js"
+    "static/js/main.2910b8c4.js"
   ]
 }
