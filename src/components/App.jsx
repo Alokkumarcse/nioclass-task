@@ -27,7 +27,6 @@ function App() {
 		"https://0h8nti4f08.execute-api.ap-northeast-1.amazonaws.com/getQuestionDetails/getquestiondetails";
 
 	const url = `${root}?QuestionID=${QuestionID[questionNumber]}`;
-
 	// when ever our url change question related component will re-render
 	useEffect(() => {
 		// Fetch question data
@@ -62,9 +61,10 @@ function App() {
 			setShowNext(false);
 			return;
 		}
+		setQuestionNumber(questionNumber + 1);
 		setShowNext(true);
 		setShowPrev(true);
-		setQuestionNumber(questionNumber + 1);
+		setLoading(true);
 	}
 
 	return (
