@@ -9,14 +9,9 @@
 	font-weight: bold;
 }
 
-.btn:hover{
+.btn:hover {
 	background-color: rgb(217, 220, 223);
-	color:rgb(40, 71, 247)
-}
-
-.btn > i {
-	font-size: 25px;
-	color: rgb(66, 128, 209);
+	color: rgb(40, 71, 247);
 }
 
 @media screen and (max-width: 525px) {
