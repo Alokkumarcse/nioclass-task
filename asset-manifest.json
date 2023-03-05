@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/nioclass-task/static/css/main.da2ea7ad.css",
+    "main.js": "/nioclass-task/static/js/main.6a728566.js",
+    "index.html": "/nioclass-task/index.html",
+    "main.da2ea7ad.css.map": "/nioclass-task/static/css/main.da2ea7ad.css.map",
+    "main.6a728566.js.map": "/nioclass-task/static/js/main.6a728566.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.da2ea7ad.css",
+    "static/js/main.6a728566.js"
+  ]
+}
