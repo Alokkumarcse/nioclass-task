@@ -9,14 +9,17 @@ function App() {
 	const [question, setQuestion] = useState("");
 	const [questionNumber, setQuestionNumber] = useState(0);
 	const [loading, setLoading] = useState(true);
+	const [showPrev, setShowPrev] = useState(false);
+	const [showNext, setShowNext] = useState(true);
 
 	// array of question Id
 	const QuestionID = [
 		"AreaUnderTheCurve_901",
-		"AreaUnderTheCurve_1",
-		"AreaUnderTheCurve_2",
 		"BinomialTheorem_901",
+		"AreaUnderTheCurve_1",
 		"DifferentialCalculus2_901",
+		"BinomialTheorem_901",
+		"AreaUnderTheCurve_2",
 	];
 
 	// root url
@@ -43,25 +46,39 @@ function App() {
 	// console.log(question.Question);
 
 	// FUNCTION: handling the previous button Click
-	function showPrevious() {
-		if (questionNumber === 0) return;
+	function handlePrevious() {
+		if (questionNumber === 0) {
+			setShowPrev(false);
+			return;
+		}
 		setLoading(true);
 		setQuestionNumber(questionNumber - 1);
+		setShowPrev(true);
+		setShowNext(true);
 	}
 
 	// FUNCTION: handling the next button Click
-	function showNext() {
-		if (questionNumber >= QuestionID.length - 1) return;
+	function handleNext() {
+		if (questionNumber >= QuestionID.length - 1) {
+			setShowNext(false);
+			return;
+		}
 		setQuestionNumber(questionNumber + 1);
+		setShowNext(true);
+		setShowPrev(true);
 	}
 
 	return (
 		<div className={styles.app}>
 			<Navbar />
-			{loading ? <span>Loading...</span> : <QuestionCard question={question} />}
-			<div>
-				<Button name="Previous" handleChange={showPrevious} />
-				<Button name="Next" handleChange={showNext} />
+			{loading ? (
+				<span className={styles.spinner}>Loading...</span>
+			) : (
+				<QuestionCard question={question} />
+			)}
+			<div className={styles.btn__container}>
+				{showPrev && <Button name="previous" handleChange={handlePrevious} />}
+				{showNext && <Button name="next" handleChange={handleNext} />}
 			</div>
 		</div>
 	);

@@ -4,7 +4,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px 60px;
-	background-color: darkgray;
+	background-color: rgb(231, 229, 229);
 }
 
 .logo__part {
@@ -17,12 +17,14 @@
 .logo__part > i {
 	font-size: 25px;
 	cursor: pointer;
+	color: rgb(2, 30, 155);
 }
 
 .logo__part > span {
 	font-size: 20px;
-	font-weight: 500;
-	cursor: pointer;
+	font-weight: 450;
+	color: rgb(64, 131, 218);
+	text-transform: uppercase;
 }
 
 .contact__part {
@@ -35,4 +37,35 @@
 .contact__part > i {
 	font-size: 25px;
 	cursor: pointer;
+	color: rgb(64, 131, 218);
+}
+
+@media screen and (max-width: 525px) {
+	.nav {
+		padding: 15px 20px;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.nav {
+		padding: 15px 10px;
+		width: auto;
+	}
+
+	.logo__part > i {
+		font-size: 15px;
+	}
+
+	.logo__part > span {
+		font-size: 15px;
+		font-weight: 400;
+	}
+
+	.contact__part {
+		gap: 10px;
+	}
+
+	.contact__part > i {
+		font-size: 15px;
+	}
 }

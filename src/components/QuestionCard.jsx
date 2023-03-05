@@ -1,15 +1,17 @@
 import React from "react";
 import { MathJax } from "better-react-mathjax";
 
+import styles from "./QuestionCard.module.css";
+
 function QuestionCard({ question }) {
 	console.log(question);
 	return (
-		<div>
-			<div>
-				<span>Topic : </span>
-				<span>{question.ChapterID}</span>
+		<div className={styles.container}>
+			<div className={styles.info}>
+				<span className={styles.topic}>Topic : </span>
+				<span className={styles.topic__info}>{question.ChapterID}</span>
 			</div>
-			<div>
+			<div className={styles.content}>
 				<MathJax>{question.Question}</MathJax>
 			</div>
 		</div>
