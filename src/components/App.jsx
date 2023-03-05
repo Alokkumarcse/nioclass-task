@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
-import { MathJax } from "better-react-mathjax";
-import "./App.css";
-import Button from "./components/Button";
+
+import styles from "./App.module.css";
+import Navbar from "./Navbar";
+import QuestionCard from "./QuestionCard";
+import Button from "./Button";
 
 function App() {
 	const [question, setQuestion] = useState("");
 	const [questionNumber, setQuestionNumber] = useState(0);
 	const [loading, setLoading] = useState(true);
 
+	// array of question Id
 	const QuestionID = [
 		"AreaUnderTheCurve_901",
 		"AreaUnderTheCurve_1",
@@ -16,10 +19,13 @@ function App() {
 		"DifferentialCalculus2_901",
 	];
 
+	// root url
 	const root =
 		"https://0h8nti4f08.execute-api.ap-northeast-1.amazonaws.com/getQuestionDetails/getquestiondetails";
+	// url === combination of root + questionID
 	const url = `${root}?QuestionID=${QuestionID[questionNumber]}`;
 
+	// when ever our url change question related component will re-render
 	useEffect(() => {
 		// Fetch question data
 		async function getQuestion() {
@@ -34,32 +40,29 @@ function App() {
 		getQuestion();
 	}, [url]);
 
-	console.log(question.Question);
+	// console.log(question.Question);
 
+	// FUNCTION: handling the previous button Click
 	function showPrevious() {
 		if (questionNumber === 0) return;
 		setLoading(true);
 		setQuestionNumber(questionNumber - 1);
 	}
 
+	// FUNCTION: handling the next button Click
 	function showNext() {
 		if (questionNumber >= QuestionID.length - 1) return;
 		setQuestionNumber(questionNumber + 1);
 	}
 
 	return (
-		<div className="App">
-			<div>Hello</div>
-			{loading ? (
-				<span>Loading...</span>
-			) : (
-				<MathJax styles={{ border: "none !important" }}>
-					{question.Question}
-				</MathJax>
-			)}
-
-			<button onClick={showPrevious}>previous</button>
-			<button onClick={showNext}>next</button>
+		<div className={styles.app}>
+			<Navbar />
+			{loading ? <span>Loading...</span> : <QuestionCard question={question} />}
+			<div>
+				<Button name="Previous" handleChange={showPrevious} />
+				<Button name="Next" handleChange={showNext} />
+			</div>
 		</div>
 	);
 }

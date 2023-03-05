@@ -1,0 +1,38 @@
+.nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 60px;
+	background-color: darkgray;
+}
+
+.logo__part {
+	display: flex;
+	gap: 5px;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo__part > i {
+	font-size: 25px;
+	cursor: pointer;
+}
+
+.logo__part > span {
+	font-size: 20px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.contact__part {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.contact__part > i {
+	font-size: 25px;
+	cursor: pointer;
+}
