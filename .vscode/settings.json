@@ -1,0 +1,5 @@
+{
+  "prettier.useEditorConfig": true,
+  "prettier.enableDebugLogs": true,
+  "reactSnippets.settings.prettierEnabled": true
+}
